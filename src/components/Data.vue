@@ -1,11 +1,17 @@
 <template>
-  <div class="">
-    {{items}}
+  <div class="col-md-12">
+    <Item
+    v-for="(item, index) in items"
+    key="indxe"
+    :item="item"
+    />
   </div>
 </template>
 
 
 <script>
+
+import Item from './Item.vue'
   export default{
     data(){
       return {
@@ -35,6 +41,9 @@
     },
     created() {
       this.fetchItems()
+    },
+    components: {
+      Item
     }
   }
 </script>
